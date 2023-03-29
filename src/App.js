@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "./App.css";
+import Myfooter from "./components/MyFooter";
+import MyMain from "./components/MyMain";
+import MyNav from "./components/MyNav";
+import logo from "./img/Book.svg";
+import horror from "./books/horror.json";
+import fantasy from "./books/fantasy.json";
+import history from "./books/history.json";
+import romance from "./books/romance.json";
+import scifi from "./books/scifi.json";
+
+let generi = [horror, history, fantasy, romance, scifi];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyNav brend={logo} />
+
+      <MyMain gender={generi} />
+      <Myfooter />
+    </>
   );
 }
 
